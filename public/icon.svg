@@ -1,6 +1,127 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs><linearGradient id="g" x1="8" y1="5" x2="56" y2="59" gradientUnits="userSpaceOnUse"><stop stop-color="#9675f0"/><stop offset="1" stop-color="#5433ad"/></linearGradient></defs>
-  <rect x="4" y="4" width="56" height="56" rx="15" fill="url(#g)"/>
-  <rect x="14" y="14" width="36" height="36" rx="9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 5"/>
-  <circle cx="32" cy="32" r="10" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="0.1 5.4"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 64 64"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="18.234375"
+     inkscape:cx="31.972579"
+     inkscape:cy="32"
+     inkscape:window-width="2560"
+     inkscape:window-height="1369"
+     inkscape:window-x="1072"
+     inkscape:window-y="259"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient9"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#8a69e4;stop-opacity:1;"
+         offset="0"
+         id="stop9" />
+      <stop
+         style="stop-color:#8a69e4;stop-opacity:0;"
+         offset="1"
+         id="stop10" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#8a69e4;stop-opacity:1;"
+         offset="0"
+         id="stop7" />
+      <stop
+         style="stop-color:#8a69e4;stop-opacity:0;"
+         offset="1"
+         id="stop8" />
+    </linearGradient>
+    <linearGradient
+       id="g"
+       x1="8"
+       y1="5"
+       x2="56"
+       y2="59"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#9675f0"
+         id="stop1" />
+      <stop
+         offset="1"
+         stop-color="#5433ad"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6"
+       id="linearGradient8"
+       x1="3.9454727"
+       y1="32.007376"
+       x2="60.062124"
+       y2="32.007376"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9"
+       id="linearGradient10"
+       x1="-1.0133119e-05"
+       y1="32.000018"
+       x2="63.999995"
+       y2="32.000018"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.022785,0,0,1.0230174,-0.72882305,-0.72977747)" />
+  </defs>
+  <rect
+     x="4"
+     y="4"
+     width="56"
+     height="56"
+     rx="15"
+     fill="url(#g)"
+     id="rect2"
+     style="display:none" />
+  <rect
+     x="1.0234376"
+     y="1.0229013"
+     width="61.953098"
+     height="61.954193"
+     rx="15.696402"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="3.42647"
+     stroke-linecap="round"
+     stroke-dasharray="7, 5"
+     id="rect3"
+     style="fill:none;fill-opacity:1;stroke:url(#linearGradient10);stroke-width:2.04581;stroke-dasharray:8.18322, 4.0916;stroke-dashoffset:0;stroke-opacity:1"
+     ry="15.385379" />
+  <ellipse
+     cx="32"
+     cy="32"
+     fill="none"
+     stroke="#ffffff"
+     stroke-width="3"
+     stroke-linecap="round"
+     stroke-dasharray="0.1, 5.4"
+     id="circle3"
+     rx="26.562124"
+     ry="26.507284"
+     style="stroke-dasharray:2,4;stroke-dashoffset:0;stroke:url(#linearGradient8);stroke-width:2" />
 </svg>
