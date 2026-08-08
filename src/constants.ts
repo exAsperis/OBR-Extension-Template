@@ -1,4 +1,4 @@
-/** Replace this with a reverse-domain identifier you control. */
-export const EXTENSION_ID = "com.example.obr-extension-template";
+/** All metadata keys and Owlbear registrations must derive from this ID. */
+export const EXTENSION_ID = "com.ex-asperis.obr-extension-template";
 
 export const EXTENSION_NAME = "OBR Extension Template";
