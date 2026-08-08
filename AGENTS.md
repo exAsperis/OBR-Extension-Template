@@ -18,5 +18,6 @@ Preserve these invariants:
 - Do not expose secrets in browser code or log user/room metadata.
 - Keep Vite's relative build base, but use absolute hosted URLs in Owlbear manifests. Do not use `./` for manifest popover or icon URLs.
 - On every release, synchronize `package.json`, both manifests, the versioned manifest filename, `src/version.ts`, and every manifest `?v=` query. Run `pnpm run check:versions`.
+- Publish both `manifest.json` and `manifest-vVERSION.json`. If Owlbear retains a stale stable manifest, remove and re-add the extension using the versioned manifest URL; its versioned popover and icon queries invalidate cached resources.
 - Run `pnpm run typecheck`, `pnpm run test`, and `pnpm run build` before delivery.
 - Keep the README, manifest URLs, GitHub Pages workflow, and package identity synchronized.
