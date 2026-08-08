@@ -1,11 +1,12 @@
 {
   "name": "obr-extension-template",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "pnpm run check:versions && tsc -b && vite build",
+    "check:versions": "node scripts/check-versions.mjs",
     "typecheck": "tsc -b --pretty false",
     "test": "vitest run",
     "test:watch": "vitest"

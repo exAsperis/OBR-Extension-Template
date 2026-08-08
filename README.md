@@ -9,11 +9,11 @@ Copy the repository, then replace all template identity values before adding fea
 - `package.json`: package name, version, and description as appropriate
 - `index.html`: page title
 - `src/constants.ts`: display name and reverse-domain extension ID
-- `public/manifest.json`: name, description, author, homepage, repository path in every hosted URL, action title, size, permissions, and optional background page
+- `public/manifest.json` and its versioned copy: name, description, author, homepage, repository path in every hosted URL, action title, size, permissions, and optional background page
 - `public/icon.svg`: extension artwork
 - `README.md`: user-facing installation, usage, privacy, and support information
 
-Search for `OBR Extension Template`, `OBR-Extension-Template`, and `com.example.obr-extension-template` to confirm that no placeholder remains. Keep Vite's relative build base, but replace the repository segment in the manifest's root-relative Owlbear URLs; Owlbear does not reliably resolve `./` relative to the manifest URL.
+Search for `OBR Extension Template`, `OBR-Extension-Template`, and `com.example.obr-extension-template` to confirm that no placeholder remains. Keep Vite's relative build base, but use absolute hosted URLs in every Owlbear manifest; Owlbear does not reliably resolve `./` relative to the manifest URL.
 
 ## Development
 
@@ -51,6 +51,14 @@ After deployment, add the published manifest URL to Owlbear Rodeo:
 ```text
 https://OWNER.github.io/REPOSITORY/manifest.json
 ```
+
+Owlbear and browsers can retain a previously fetched manifest. For a new installation or whenever the stable URL remains stale, use the versioned endpoint instead:
+
+```text
+https://OWNER.github.io/REPOSITORY/manifest-vVERSION.json
+```
+
+Every public release must update the package version, both manifest files, the versioned manifest filename, `src/version.ts`, and the `?v=` query on every manifest resource URL. `pnpm run check:versions` rejects drift, and the production build runs that check automatically. Vite already hashes generated JavaScript and CSS filenames; the manifest queries ensure Owlbear requests the new HTML and icon rather than reusing cached entries.
 
 ## Template boundaries
 
