@@ -4,12 +4,12 @@
   "manifest_version": 1,
   "description": "A reusable React, TypeScript, and Vite starter for Owlbear Rodeo extensions.",
   "author": "ex Asperis",
-  "homepage_url": "https://github.com/OWNER/REPOSITORY",
-  "icon": "./icon.svg",
+  "homepage_url": "https://github.com/exAsperis/OBR-Extension-Template",
+  "icon": "/OBR-Extension-Template/icon.svg",
   "action": {
     "title": "OBR Extension Template",
-    "icon": "./icon.svg",
-    "popover": "./",
+    "icon": "/OBR-Extension-Template/icon.svg",
+    "popover": "/OBR-Extension-Template/",
     "width": 440,
     "height": 650
   }

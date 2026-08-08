@@ -9,11 +9,11 @@ Copy the repository, then replace all template identity values before adding fea
 - `package.json`: package name, version, and description as appropriate
 - `index.html`: page title
 - `src/constants.ts`: display name and reverse-domain extension ID
-- `public/manifest.json`: name, description, author, homepage, action title, size, permissions, and optional background page
+- `public/manifest.json`: name, description, author, homepage, repository path in every hosted URL, action title, size, permissions, and optional background page
 - `public/icon.svg`: extension artwork
 - `README.md`: user-facing installation, usage, privacy, and support information
 
-Search for both `OBR Extension Template` and `com.example.obr-extension-template` to confirm that no placeholder remains. The relative Vite base and manifest asset URLs are intentionally reusable beneath any GitHub Pages repository path.
+Search for `OBR Extension Template`, `OBR-Extension-Template`, and `com.example.obr-extension-template` to confirm that no placeholder remains. Keep Vite's relative build base, but replace the repository segment in the manifest's root-relative Owlbear URLs; Owlbear does not reliably resolve `./` relative to the manifest URL.
 
 ## Development
 

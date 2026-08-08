@@ -6,7 +6,7 @@ Before implementing extension-specific behavior:
 
 1. Replace the template name in `package.json`, `index.html`, `src/constants.ts`, and `public/manifest.json`.
 2. Replace `com.example.obr-extension-template` with a stable reverse-domain extension ID.
-3. Replace the manifest homepage placeholder and customize the icon.
+3. Replace `OBR-Extension-Template` in every manifest URL with the new GitHub repository name, update the homepage, and customize the icon.
 4. Decide whether the extension is available to all players or restricted to the GM; enforce that decision before reading sensitive data.
 5. Identify which SDK state is room-, scene-, player-, or item-scoped. Handle the valid no-scene state explicitly.
 
@@ -16,6 +16,6 @@ Preserve these invariants:
 - Unsubscribe every `onChange` listener during React effect cleanup.
 - Use Owlbear theme variables with usable CSS fallbacks.
 - Do not expose secrets in browser code or log user/room metadata.
-- Keep `vite.config.ts` compatible with the Owlbear iframe and relative GitHub Pages paths.
+- Keep Vite's relative build base, but use root-relative repository paths such as `/REPOSITORY/` in the Owlbear manifest. Do not use `./` for manifest popover or icon URLs.
 - Run `pnpm run typecheck`, `pnpm run test`, and `pnpm run build` before delivery.
 - Keep the README, manifest URLs, GitHub Pages workflow, and package identity synchronized.
