@@ -3,6 +3,7 @@ import { access, readFile } from "node:fs/promises";
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
 const packageJson = await readJson("package.json");
 const manifest = await readJson("public/manifest.json");
+const localManifest = await readJson("public/manifest-local.json");
 const expected = packageJson.version;
 const versionedPath = `public/manifest-v${expected}.json`;
 
@@ -16,6 +17,7 @@ if (!versionMatch) throw new Error("Could not read RELEASE_VERSION from src/vers
 const versions = new Map([
   ["package.json", expected],
   ["public/manifest.json", manifest.version],
+  ["public/manifest-local.json", localManifest.version],
   [versionedPath, versionedManifest.version],
   ["manifest popover query", new URL(manifest.action.popover).searchParams.get("v")],
   ["manifest icon query", new URL(manifest.icon).searchParams.get("v")],

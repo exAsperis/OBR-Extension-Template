@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 const readJson = async (path) => JSON.parse(await readFile(path, "utf8"));
 const constantsSource = await readFile("src/constants.ts", "utf8");
 const manifest = await readJson("public/manifest.json");
+const localManifest = await readJson("public/manifest-local.json");
 const packageJson = await readJson("package.json");
 
 const readConstant = (name) => constantsSource.match(new RegExp(`export\\s+const\\s+${name}\\s*=\\s*["']([^"']+)["']`))?.[1];
@@ -19,6 +20,10 @@ if (extensionId !== expectedId) failures.push(`EXTENSION_ID must be ${expectedId
 if (packageJson.name !== slug) failures.push(`package.json name must be ${slug}, received ${packageJson.name}`);
 if (manifest.name !== extensionName) failures.push(`manifest name must be ${extensionName}, received ${manifest.name}`);
 if (manifest.author !== "es Asperis") failures.push(`manifest author must be es Asperis, received ${String(manifest.author)}`);
+if (localManifest.name !== `${extensionName} (Local)`) failures.push(`local manifest name must be ${extensionName} (Local), received ${localManifest.name}`);
+if (localManifest.author !== "es Asperis") failures.push(`local manifest author must be es Asperis, received ${String(localManifest.author)}`);
+if (localManifest.action?.title !== `${extensionName} (Local)`) failures.push(`local manifest action title must be ${extensionName} (Local), received ${String(localManifest.action?.title)}`);
+if (localManifest.action?.popover !== "http://localhost:5173/extension.html") failures.push(`local manifest popover must be http://localhost:5173/extension.html, received ${String(localManifest.action?.popover)}`);
 
 try {
   const storeSource = await readFile("public/store.md", "utf8");

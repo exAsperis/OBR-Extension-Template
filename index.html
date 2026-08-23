@@ -3,11 +3,72 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#7656d6" />
-    <title>OBR Extension Template</title>
+    <meta name="theme-color" content="#17141f" />
+    <meta name="description" content="A production-minded React and TypeScript starter for Owlbear Rodeo extensions." />
+    <link rel="icon" href="./icon.svg" />
+    <link rel="stylesheet" href="/src/showcase.css" />
+    <title>OBR Extension Template · Build for Owlbear Rodeo</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="OBR Extension Template home">
+        <img src="./icon.svg" alt="" width="34" height="34" />
+        <span>OBR Extension Template</span>
+      </a>
+      <a class="header-link" href="https://github.com/exAsperis/OBR-Extension-Template">View on GitHub</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">React · TypeScript · Vite · Owlbear SDK</p>
+          <h1>Start with the extension plumbing already solved.</h1>
+          <p class="lede">A reusable, production-minded foundation for building Owlbear Rodeo extensions—with SDK lifecycle handling, theme support, testing, version checks, and GitHub Pages deployment ready to customize.</p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/exAsperis/OBR-Extension-Template/generate">Use this template</a>
+            <a class="button secondary" href="#getting-started">Setup instructions</a>
+          </div>
+        </div>
+        <aside class="preview" aria-label="Template features">
+          <div class="preview-bar"><span></span><span></span><span></span></div>
+          <div class="preview-body">
+            <p class="mini-label">Extension foundation</p>
+            <h2>Ready for the room.</h2>
+            <div class="feature-grid">
+              <div><strong>SDK</strong><span>Safe readiness flow</span></div>
+              <div><strong>Theme</strong><span>Light and dark modes</span></div>
+              <div><strong>State</strong><span>No-scene handling</span></div>
+              <div><strong>Ship</strong><span>Pages workflow</span></div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" aria-labelledby="included-heading">
+        <p class="eyebrow">Included by default</p>
+        <h2 id="included-heading">A small template with strong guardrails.</h2>
+        <div class="cards">
+          <article><span>01</span><h3>Owlbear-aware</h3><p>SDK access waits for readiness, listeners clean up correctly, and the empty-scene state is treated as normal.</p></article>
+          <article><span>02</span><h3>Built to verify</h3><p>Type checks, unit tests, identity checks, and release-version checks catch drift before deployment.</p></article>
+          <article><span>03</span><h3>Ready to publish</h3><p>A relative Vite build and absolute manifest URLs work together for reliable GitHub Pages releases.</p></article>
+        </div>
+      </section>
+
+      <section class="section setup" id="getting-started" aria-labelledby="setup-heading">
+        <div>
+          <p class="eyebrow">Getting started</p>
+          <h2 id="setup-heading">From template to working extension.</h2>
+          <p>Use the repository template, replace the placeholder identity first, then build your feature on the dedicated extension entry point.</p>
+        </div>
+        <ol>
+          <li><span>1</span><div><strong>Create and rename</strong><p>Replace the package, manifest, constants, URLs, and icon with your extension identity.</p></div></li>
+          <li><span>2</span><div><strong>Verify the identity</strong><code>pnpm run check:identity</code></div></li>
+          <li><span>3</span><div><strong>Run locally</strong><code>pnpm run dev</code><p>Add <code>http://localhost:5173/manifest-local.json</code> to Owlbear Rodeo.</p></div></li>
+          <li><span>4</span><div><strong>Build and ship</strong><code>pnpm run typecheck &amp;&amp; pnpm test &amp;&amp; pnpm run build</code></div></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer"><p>Built for extension authors who would rather start with the interesting part.</p></footer>
   </body>
 </html>

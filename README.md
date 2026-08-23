@@ -7,9 +7,10 @@ A reusable starter for Owlbear Rodeo extensions using React, TypeScript, Vite, V
 Copy the repository, then replace all template identity values before adding features:
 
 - `package.json`: package name, version, and description as appropriate
-- `index.html`: page title
+- `index.html`: public showcase copy, links, and page title
+- `extension.html`: extension popover page title
 - `src/constants.ts`: display name and required `com.ex-asperis.{extension-name}` extension ID
-- `public/manifest.json` and its versioned copy: name, description, author, homepage, repository path in every hosted URL, action title, size, permissions, and optional background page
+- `public/manifest.json`, `public/manifest-local.json`, and the versioned manifest: name, description, author, homepage, repository path in every hosted URL, action title, size, permissions, and optional background page
 - `public/icon.svg`: extension artwork
 - `README.md`: user-facing installation, usage, privacy, and support information
 
@@ -22,9 +23,9 @@ pnpm install
 pnpm run dev
 ```
 
-Add `http://localhost:5173/manifest.json` as a development extension in Owlbear Rodeo. The Vite server permits the Owlbear Rodeo origin to load the extension iframe.
+Add `http://localhost:5173/manifest-local.json` as a development extension in Owlbear Rodeo. It is served automatically by Vite and points to the local `extension.html` popover. The Vite server permits the Owlbear Rodeo origin to load the extension iframe.
 
-The standalone browser page intentionally reports that it must be opened inside Owlbear Rodeo. Extension functionality should be tested in all applicable states:
+The root page (`index.html`) is the public extension showcase and setup guide. The Owlbear popover has a separate entry point at `extension.html`; opening that page directly intentionally reports that it must be opened inside Owlbear Rodeo. Extension functionality should be tested in all applicable states:
 
 - GM and player roles
 - Scene open and no scene open
@@ -58,7 +59,7 @@ Owlbear and browsers can retain a previously fetched manifest. For a new install
 https://OWNER.github.io/REPOSITORY/manifest-vVERSION.json
 ```
 
-Every public release must update the package version, both manifest files, the versioned manifest filename, `src/version.ts`, and the `?v=` query on every manifest resource URL. `pnpm run check:versions` rejects drift, and the production build runs that check automatically. Vite already hashes generated JavaScript and CSS filenames; the manifest queries ensure Owlbear requests the new HTML and icon rather than reusing cached entries.
+Every public release must update the package version, stable and local manifests, the versioned manifest filename, `src/version.ts`, and the `?v=` query on every public manifest resource URL. `pnpm run check:versions` rejects drift, and the production build runs that check automatically. Vite already hashes generated JavaScript and CSS filenames; the manifest queries ensure Owlbear requests the new HTML and icon rather than reusing cached entries.
 
 ## Template boundaries
 
