@@ -5,6 +5,7 @@ const constantsSource = await readFile("src/constants.ts", "utf8");
 const manifest = await readJson("public/manifest.json");
 const localManifest = await readJson("public/manifest-local.json");
 const packageJson = await readJson("package.json");
+const staticWebApp = await readJson("public/staticwebapp.config.json");
 
 const readConstant = (name) => constantsSource.match(new RegExp(`export\\s+const\\s+${name}\\s*=\\s*["']([^"']+)["']`))?.[1];
 const extensionName = readConstant("EXTENSION_NAME");
@@ -24,6 +25,7 @@ if (localManifest.name !== `${extensionName} (Local)`) failures.push(`local mani
 if (localManifest.author !== "es Asperis") failures.push(`local manifest author must be es Asperis, received ${String(localManifest.author)}`);
 if (localManifest.action?.title !== `${extensionName} (Local)`) failures.push(`local manifest action title must be ${extensionName} (Local), received ${String(localManifest.action?.title)}`);
 if (localManifest.action?.popover !== "http://localhost:5173/extension.html") failures.push(`local manifest popover must be http://localhost:5173/extension.html, received ${String(localManifest.action?.popover)}`);
+if (staticWebApp.globalHeaders?.["Access-Control-Allow-Origin"] !== "https://www.owlbear.rodeo") failures.push("Azure Static Web Apps must allow the Owlbear Rodeo origin");
 
 try {
   const storeSource = await readFile("public/store.md", "utf8");
