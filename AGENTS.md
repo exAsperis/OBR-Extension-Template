@@ -7,7 +7,7 @@ Before implementing extension-specific behavior:
 1. Replace the template name in `package.json`, `index.html`, `extension.html`, `src/constants.ts`, `manifest-local.json`, and both public release manifest files.
 2. Set `EXTENSION_ID` to `com.ex-asperis.{extension-name}`, where `{extension-name}` is the lowercase display name with non-alphanumeric runs converted to hyphens. Derive every metadata namespace and Owlbear registration ID from this constant; never introduce a second reverse-domain namespace.
 3. Replace `OBR-Extension-Template` and `exAsperis` in every absolute manifest URL with the new GitHub repository and owner, update the homepage, and customize the icon.
-4. Set the published author to exactly `es Asperis` in the manifest and any extension-store submission metadata.
+4. Set the published author to exactly `ex Asperis` in the manifest and any extension-store submission metadata.
 5. Run `pnpm run check:identity` once immediately after renaming the copied template and fix every failure before implementing features. This is the required creation-time identity verification.
 6. Decide whether the extension is available to all players or restricted to the GM; enforce that decision before reading sensitive data.
 7. Identify which SDK state is room-, scene-, player-, or item-scoped. Handle the valid no-scene state explicitly.

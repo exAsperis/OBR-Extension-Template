@@ -14,7 +14,7 @@ Copy the repository, then replace all template identity values before adding fea
 - `public/icon.svg`: extension artwork
 - `README.md`: user-facing installation, usage, privacy, and support information
 
-Search for `OBR Extension Template`, `OBR-Extension-Template`, and `com.ex-asperis.obr-extension-template` to confirm that no placeholder remains. Set the manifest and store author to exactly `es Asperis`, then run `pnpm run check:identity` once before implementing features. Keep Vite's relative build base, but use absolute hosted URLs in every Owlbear manifest; Owlbear does not reliably resolve `./` relative to the manifest URL.
+Search for `OBR Extension Template`, `OBR-Extension-Template`, and `com.ex-asperis.obr-extension-template` to confirm that no placeholder remains. Set the manifest and store author to exactly `ex Asperis`, then run `pnpm run check:identity` once before implementing features. Keep Vite's relative build base, but use absolute hosted URLs in every Owlbear manifest; Owlbear does not reliably resolve `./` relative to the manifest URL.
 
 ## Development
 

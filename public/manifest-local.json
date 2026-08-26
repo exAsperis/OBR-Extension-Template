@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "manifest_version": 1,
   "description": "Local development build of the OBR Extension Template.",
-  "author": "es Asperis",
+  "author": "ex Asperis",
   "homepage_url": "http://localhost:5173/",
   "icon": "http://localhost:5173/icon.svg",
   "action": {
